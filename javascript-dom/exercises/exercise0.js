@@ -1,7 +1,7 @@
 function init(){
-    document.getElementById("myDiv").innerHTML = "hello";
+    document.getElementById("mydiv").innerHTML = "hello";
 }
 
 function abc(){
-    concole.log("abc"
+    console.log("abc")
 }

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise #3: Simple playlist from Lecture</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='sortandsearch.js') }}"></script>
+
+    
+    
+</head>
+<body>
+
+<form>
+    <div >
+        <input type="text" id="songTextInput" size="40" placeholder="Song name">
+        <input type="button" id="addButton" value="Add Song" onclick="addSong();">
+    </div>
+    <div>
+        <input type="text" id="songSearch" size="20" placeholder="search" oninput="search()">
+        <input type="button" id="sortButton" value="Sort" onclick="sortSongs();">
+    </div>
+</form>
+
+<!-- Need to use single quotes ' below, because data contains double quotes. -->
+<ul id="playlist" data-playlist='{{playlist| tojson}}'>
+    <!-- <li>Example <img src="images/delete.png"></li> -->
+</ul>
+<script>
+    let pl = document.getElementById("playlist");
+    playlist = JSON.parse(pl.dataset.playlist);
+    showPlaylist();
+</script>
+</body>
+</html>
+
